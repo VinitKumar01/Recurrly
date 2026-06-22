@@ -1,8 +1,8 @@
 import { Tabs } from "expo-router";
-import { tabs } from "../constants/data";
+import { tabs } from "../../constants/data";
 import { View } from "react-native";
 import { Image as ExpoImage } from "expo-image";
-import { colors, components } from "../constants/theme";
+import { colors, components } from "../../constants/theme";
 import { clsx } from "clsx";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { styled } from "nativewind";
@@ -42,7 +42,14 @@ export default function TabLayout() {
           borderRadius: tabBar.radius,
           backgroundColor: colors.primary,
           borderTopWidth: 0,
-          elevation: 0,
+          shadowColor: "#000",
+          shadowOffset: {
+            width: 0,
+            height: 4,
+          },
+          shadowOpacity: 0.8,
+          shadowRadius: 8,
+          elevation: 8,
         },
         tabBarItemStyle: {
           paddingVertical: tabBar.height / 2 - tabBar.iconFrame / 1.6,
