@@ -11,7 +11,7 @@ import {
 import { icons } from "@/constants/icons";
 import { formatCurrency, formatSubscriptionDateTime } from "@/lib/utils";
 import ListHeading from "@/components/ListHeading";
-import UpcommingSubscriptionCard from "@/components/UpcommingSubscriptionCard";
+import UpcomingSubscriptionCard from "@/components/UpcomingSubscriptionCard";
 
 const SafeAreaView = styled(RNSafeAreaView);
 const Image = styled(ExpoImage);
@@ -49,16 +49,16 @@ export default function App() {
         </View>
 
         <View>
-          <ListHeading title="Upcomming" />
+          <ListHeading title="Upcoming" />
           <FlatList
             data={UPCOMING_SUBSCRIPTIONS}
-            renderItem={({ item }) => <UpcommingSubscriptionCard {...item} />}
+            renderItem={({ item }) => <UpcomingSubscriptionCard {...item} />}
             keyExtractor={(item) => item.id}
             horizontal
             showsHorizontalScrollIndicator={false}
             ListEmptyComponent={
               <Text className="home-empty-state">
-                No upcomming renewals yet.
+                No upcoming renewals yet.
               </Text>
             }
           />

@@ -5,7 +5,7 @@ import { View, Text } from "react-native";
 
 const Image = styled(ExpoImage);
 
-export default function UpcommingSubscriptionCard({
+export default function UpcomingSubscriptionCard({
   name,
   price,
   daysLeft,
