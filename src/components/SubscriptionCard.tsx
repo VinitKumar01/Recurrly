@@ -30,6 +30,9 @@ export default function SubscriptionCard({
 
   return (
     <Pressable
+      accessibilityRole="button"
+      accessibilityState={{ expanded }}
+      accessibilityHint="Shows subscription details"
       onPress={onPress}
       className={clsx(
         "sub-card shadow-sm drop-shadow-sm",
@@ -81,7 +84,19 @@ export default function SubscriptionCard({
                   numberOfLines={1}
                   ellipsizeMode="tail"
                 >
-                  {category?.trim() || plan?.trim() || fallback}
+                  {category?.trim() || fallback}
+                </Text>
+              </View>
+            </View>
+            <View className="sub-row">
+              <View className="sub-row-copy">
+                <Text className="sub-label">Plan:</Text>
+                <Text
+                  className="sub-value"
+                  numberOfLines={1}
+                  ellipsizeMode="tail"
+                >
+                  {plan?.trim() || fallback}
                 </Text>
               </View>
             </View>
