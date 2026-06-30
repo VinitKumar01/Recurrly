@@ -42,7 +42,7 @@ export default function TabLayout() {
           borderRadius: tabBar.radius,
           backgroundColor: colors.primary,
           borderTopWidth: 0,
-          shadowColor: "#000",
+          shadowColor: "#000000",
           shadowOffset: {
             width: 0,
             height: 4,

@@ -13,7 +13,7 @@ export default function UpcomingSubscriptionCard({
   currency,
 }: UpcomingSubscriptionCardProps) {
   return (
-    <View className="upcoming-card shadow-gray-500 shadow-sm drop-shadow-sm my-2 mx-1">
+    <View className="upcoming-card shadow-sm drop-shadow-sm my-2 mx-1">
       <View className="upcoming-row">
         <Image source={icon} className="upcoming-icon" />
         <View>
