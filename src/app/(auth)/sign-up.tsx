@@ -128,7 +128,7 @@ export default function SignUpScreen() {
   const handleVerifyCodeSubmit = async () => {
     if (!isLoaded || !signUp) return;
 
-    if (!verificationCode || verificationCode.length < 4) {
+    if (!verificationCode || verificationCode.length < 6) {
       setCodeError(true);
       setErrorMsg("Please enter a valid verification code.");
       return;
