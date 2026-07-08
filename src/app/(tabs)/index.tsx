@@ -2,6 +2,7 @@ import { styled } from "nativewind";
 import { FlatList, Text, View } from "react-native";
 import { Image as ExpoImage } from "expo-image";
 import { SafeAreaView as RNSafeAreaView } from "react-native-safe-area-context";
+import { useUser } from "@clerk/expo";
 import images from "@/constants/images";
 import {
   HOME_BALANCE,
@@ -20,15 +21,20 @@ const SafeAreaView = styled(RNSafeAreaView);
 const Image = styled(ExpoImage);
 
 function HomeListHeader() {
+  const { user } = useUser();
+
+  const userAvatar = user?.imageUrl ? { uri: user.imageUrl } : images.avatar;
+  const userName = user?.fullName || user?.firstName || HOME_USER.name;
+
   return (
     <>
       <View className="home-header">
         <View className="home-user">
           <Image
-            source={images.avatar}
+            source={userAvatar}
             className="home-avatar shadow-gray-500 shadow-sm drop-shadow-sm"
           />
-          <Text className="home-user-name">{HOME_USER.name}</Text>
+          <Text className="home-user-name">{userName}</Text>
         </View>
         <Image
           source={icons.add}
